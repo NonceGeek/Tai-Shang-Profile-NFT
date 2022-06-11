@@ -1,23 +1,23 @@
 {
   "files": {
-    "main.css": "/Tai-Shang-Profile-NFT/static/css/main.bb62dc15.chunk.css",
-    "main.js": "/Tai-Shang-Profile-NFT/static/js/main.26d2f7d9.chunk.js",
-    "main.js.map": "/Tai-Shang-Profile-NFT/static/js/main.26d2f7d9.chunk.js.map",
-    "runtime-main.js": "/Tai-Shang-Profile-NFT/static/js/runtime-main.8370d319.js",
-    "runtime-main.js.map": "/Tai-Shang-Profile-NFT/static/js/runtime-main.8370d319.js.map",
-    "static/css/2.c2c00b42.chunk.css": "/Tai-Shang-Profile-NFT/static/css/2.c2c00b42.chunk.css",
-    "static/js/2.9ed36bdc.chunk.js": "/Tai-Shang-Profile-NFT/static/js/2.9ed36bdc.chunk.js",
-    "static/js/2.9ed36bdc.chunk.js.map": "/Tai-Shang-Profile-NFT/static/js/2.9ed36bdc.chunk.js.map",
-    "index.html": "/Tai-Shang-Profile-NFT/index.html",
-    "static/css/2.c2c00b42.chunk.css.map": "/Tai-Shang-Profile-NFT/static/css/2.c2c00b42.chunk.css.map",
-    "static/css/main.bb62dc15.chunk.css.map": "/Tai-Shang-Profile-NFT/static/css/main.bb62dc15.chunk.css.map",
-    "static/js/2.9ed36bdc.chunk.js.LICENSE.txt": "/Tai-Shang-Profile-NFT/static/js/2.9ed36bdc.chunk.js.LICENSE.txt"
+    "main.css": "/static/css/main.bb62dc15.chunk.css",
+    "main.js": "/static/js/main.99cfd997.chunk.js",
+    "main.js.map": "/static/js/main.99cfd997.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.c9ba41cb.js",
+    "runtime-main.js.map": "/static/js/runtime-main.c9ba41cb.js.map",
+    "static/css/2.c2c00b42.chunk.css": "/static/css/2.c2c00b42.chunk.css",
+    "static/js/2.f385023e.chunk.js": "/static/js/2.f385023e.chunk.js",
+    "static/js/2.f385023e.chunk.js.map": "/static/js/2.f385023e.chunk.js.map",
+    "index.html": "/index.html",
+    "static/css/2.c2c00b42.chunk.css.map": "/static/css/2.c2c00b42.chunk.css.map",
+    "static/css/main.bb62dc15.chunk.css.map": "/static/css/main.bb62dc15.chunk.css.map",
+    "static/js/2.f385023e.chunk.js.LICENSE.txt": "/static/js/2.f385023e.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.8370d319.js",
+    "static/js/runtime-main.c9ba41cb.js",
     "static/css/2.c2c00b42.chunk.css",
-    "static/js/2.9ed36bdc.chunk.js",
+    "static/js/2.f385023e.chunk.js",
     "static/css/main.bb62dc15.chunk.css",
-    "static/js/main.26d2f7d9.chunk.js"
+    "static/js/main.99cfd997.chunk.js"
   ]
 }
