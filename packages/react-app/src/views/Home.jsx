@@ -44,6 +44,7 @@ function Home({
       {/* Mint button */}
       <div style={{ maxWidth: 820, margin: "auto", marginTop: 32, paddingBottom: 32 }}>
         <div style={{ margin: 10}}>
+            <span>Avatar</span>
                 <Input type="file"  onChange={async e => {
                     const result = await ipfs.add(e.target.files[0]);
                     const uri = "https://ipfs.infura.io/ipfs/"+ result.cid.toString()
@@ -51,8 +52,6 @@ function Home({
                     alert("上传成功！");
                     setMintData({...mintData, uri: uri});
                 }}/>
-
-          <span>Uri</span>
           {/*<Input*/}
           {/*  placeholder="eg. https://noncegeek.com/"*/}
           {/*  onChange={e => {*/}
@@ -109,11 +108,12 @@ function Home({
                     </div>
                   }
                 >
-                  <a href={"https://opensea.io/assets/"+(readContracts && readContracts.TaiShangVoxel && readContracts.TaiShangVoxel.address)+"/"+item.id} target="_blank">
-                   <img style={{width: "200px",height: "200px"}} src={item.image} />
+                  <a href={item.image} target="_blank">
+                   <img style={{width: "200px",height: "200px"}} src={item.image} /><br/>
                   {/*<iframe src={item.image} style={{width: "200px",height: "200px"}}></iframe>*/}
                   </a>
-                  <div>{item.description}</div>
+                    <br/>
+                  <div>{item.nickname}</div>
                 </Card>
 
                 <div>
@@ -137,7 +137,7 @@ function Home({
                   <Button
                     onClick={() => {
                       console.log("writeContracts", writeContracts);
-                      tx(writeContracts.TaiShangVoxel.transferFrom(address, transferToAddresses[id], id));
+                      tx(writeContracts.TaiShangProfileNFT.transferFrom(address, transferToAddresses[id], id));
                     }}
                   >
                     Transfer
