@@ -7,6 +7,7 @@ import { Button, Card, List, Input } from "antd";
 import { Address, AddressInput } from "../components";
 import {create} from "ipfs-http-client";
 
+
 /**
  * web3 props can be passed from '../App.jsx' into your local view component for use
  * @param {*} yourLocalBalance balance on current network
@@ -36,24 +37,21 @@ function Home({
   // const purpose = useContractReader(readContracts, "YourContract", "purpose");
   const [mintData, setMintData] = useState({});
   const [transferToAddresses, setTransferToAddresses] = useState({});
+  let hash= ''
+  let image = '';
   return (
     <div>
       {/* Mint button */}
       <div style={{ maxWidth: 820, margin: "auto", marginTop: 32, paddingBottom: 32 }}>
         <div style={{ margin: 10}}>
-            <form action="#" id="upload-form">
-                <input type="file" id="upload"/>
-                <Button
-                    onClick={
-                        async () => {
-                            const files = document.getElementById("upload").files;
-                            const result = await ipfs.add(files[0]);
-                            const uri = "https://ipfs.io/ipfs/"+ result.cid.toString()
-                            setMintData({...mintData, uri: uri});
-                        }
-                    }
-                >上传</Button>
-            </form>
+                <Input type="file"  onChange={async e => {
+                    const result = await ipfs.add(e.target.files[0]);
+                    const uri = "https://ipfs.infura.io/ipfs/"+ result.cid.toString()
+                    console.log(uri)
+                    alert("上传成功！");
+                    setMintData({...mintData, uri: uri});
+                }}/>
+
           <span>Uri</span>
           {/*<Input*/}
           {/*  placeholder="eg. https://noncegeek.com/"*/}
@@ -112,8 +110,8 @@ function Home({
                   }
                 >
                   <a href={"https://opensea.io/assets/"+(readContracts && readContracts.TaiShangVoxel && readContracts.TaiShangVoxel.address)+"/"+item.id} target="_blank">
-                  {/* <img src={item.image} /> */}
-                  <iframe src={item.external_url} style={{width: "200px",height: "200px"}}></iframe>
+                   <img style={{width: "200px",height: "200px"}} src={item.image} />
+                  {/*<iframe src={item.image} style={{width: "200px",height: "200px"}}></iframe>*/}
                   </a>
                   <div>{item.description}</div>
                 </Card>
