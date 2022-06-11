@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 
 import { Button, Card, List, Input } from "antd";
 import { Address, AddressInput } from "../components";
+import {create} from "ipfs-http-client";
 
 /**
  * web3 props can be passed from '../App.jsx' into your local view component for use
@@ -12,6 +13,13 @@ import { Address, AddressInput } from "../components";
  * @param {*} readContracts contracts from current chain already pre-loaded using ethers contract module. More here https://docs.ethers.io/v5/api/contract/contract/
  * @returns react component
  **/
+
+const ipfs = create({
+    host: "ipfs.infura.io",
+    port: 5001,
+    protocol: "https",
+});
+
 function Home({
   isSigner,
   loadWeb3Modal,
@@ -33,13 +41,26 @@ function Home({
       {/* Mint button */}
       <div style={{ maxWidth: 820, margin: "auto", marginTop: 32, paddingBottom: 32 }}>
         <div style={{ margin: 10}}>
+            <form action="#" id="upload-form">
+                <input type="file" id="upload"/>
+                <Button
+                    onClick={
+                        async () => {
+                            const files = document.getElementById("upload").files;
+                            const result = await ipfs.add(files[0]);
+                            const uri = "https://ipfs.io/ipfs/"+ result.cid.toString()
+                            setMintData({...mintData, uri: uri});
+                        }
+                    }
+                >上传</Button>
+            </form>
           <span>Uri</span>
-          <Input
-            placeholder="eg. https://noncegeek.com/"
-            onChange={e => {
-              setMintData({...mintData, uri: e.target.value});
-            }}
-          />
+          {/*<Input*/}
+          {/*  placeholder="eg. https://noncegeek.com/"*/}
+          {/*  onChange={e => {*/}
+          {/*    setMintData({...mintData, uri: e.target.value});*/}
+          {/*  }}*/}
+          {/*/>*/}
         </div>
         <div style={{ margin: 10}}>
           <span>Nickname</span>
